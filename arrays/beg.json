@@ -1,0 +1,75 @@
+[
+    {
+    "name":"Andy The Great",
+    "phrases":{
+        "success":[
+            "Aight.. spawned some coins in you pocket",
+            "Check your wallet ;)",
+            "All hail stalkin'!!"
+        ],
+        "fails":[
+            "Nah... I have to waste my money on e-girls",
+            "I'm broke fr :expressionless:",
+            "Why should I give u money duh?",
+            "begging = ban :angry:"
+        ]
+    },
+    "coins":{
+        "min":20,
+        "max":60
+    }
+    },
+    {
+      "name":"Humanoid",
+      "phrases":{
+        "success":[
+         "Im happy to share with u.",
+         "Okay, but money gives temporary happiness."
+        ],
+        "fails":[
+         "NO!",
+         "Nah sorry.",
+         "You should have an aim in your life."
+        ]
+      },
+    "coins":{
+      "min":4,
+      "max":10
+    }
+    },
+    {
+      "name":"Rere",
+      "phrases":{
+        "success":[
+          "okay ig...",
+          "Here, take some free money"
+        ],
+        "fails":[
+          "shut!",
+          "Get a block!",
+          "-mute"
+        ]
+      },
+      "coins":{
+        "min":100,
+        "max":180
+      }
+    },
+    {
+      "name":"Quixie",
+      "phrases":{
+        "success":[
+
+        ],
+        "fails":[
+          "No money for you",
+          "Sorry.. :sob"
+        ]
+      },
+      "coins":{
+        "min":68,
+        "max":69
+      }
+    }
+
+]

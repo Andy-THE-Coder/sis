@@ -1,0 +1,26 @@
+{
+  "herdiary":{
+    "name":"Her Diary",
+    "description":"Wtf? U stole her secret diary?",
+    "id":"diary",
+    "type":"Collectable",
+    "notSharable":true
+  },
+  "pill": {
+  "name": "Pill",
+  "id": "pill",
+  "image": "https://cdn.discordapp.com/emojis/124.png",
+  "description": "A pill that gives you 20% of your current wallet.",
+  "longdescription": "Adds `(20% / 100) x your wallet` to your wallet.",
+  "type": "Power-up",
+  "notSharble":true,
+  "usable": true,
+  "consumable": true,
+  "rarity": 3,
+  "cost": 50000,
+  "Constants": {
+    "FOOT_HEIGHT": 1.2,
+    "FOOT_WIDTH": 0.5
+    }
+  }
+}
