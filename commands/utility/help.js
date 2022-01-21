@@ -96,4 +96,3 @@ return message.channel.send({embeds:[subHelp]})
 		message.channel.send({embeds:[deepHelp]});
 	},
 };
-//lurk

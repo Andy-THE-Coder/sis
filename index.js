@@ -1,4 +1,4 @@
-require('dotenv')
+require('dotenv').config();
 const { MessageEmbed, Client, Intents, Collection} = require('discord.js');
 const fs = require('fs');
 const config = require('./config.json');
@@ -10,7 +10,6 @@ Intents.FLAGS.GUILD_MEMBERS,
 ] });
 
 require('./useful/roles.js')(client);
-const token = process.env['token']
 //collection
 client.commands = new Collection();
 client.snipes = new Collection();
@@ -102,7 +101,7 @@ if (message.content.startsWith(`<@!${client.user.id}>`)||message.content.startsW
 
 if (message.content.trim() == `<@!${client.user.id}>` || message.content.trim() == `<@${client.user.id}>`)
   return message.reply({embeds:[{
-  title: 'Side-kick',
+  title: 'Sis',
   description: `${message.author}, My prefix is \`​${prefix}\`​. Use \`​${prefix}help\`​ to see commands`,
   color: 9095703,
 }]});
@@ -138,28 +137,14 @@ let args;
 
 //owner only
 if (command.owner === true) {
-if(message.author.id !== process.env.ownerID) return;
-}
-
-
-
-
-//permissions check
-  if (command.perms) {
-let perms = [];
-let missingPerms = [];
-
-    command.perms.forEach(p => {
-      perms.push(message.channel.permissionsFor(message.author).has(p));
-      if (!(message.channel.permissionsFor(message.author).has(p)))
-        missingPerms.push(p);
-    });
-    
-    missingPerms = missingPerms.join("\n- ");
-    if (perms.includes(false)) {
-      return message.channel.send("Woops! I guess you are not allowed to mess with sensative things.......\nYou'll need the following permissions before you could touch these things: \n\n```diff\n- " + missingPerms.replace(/_/g, " ") + "\n```\nAight, cya soon! I have a lot of work to do..")
-    }
+if(message.author.id !== process.env.ownerID){
+  try{
+    message.react('<a:you_tried:933997991398866984>')
+  }catch(err){
   }
+  return;
+}
+}
 
 
 
@@ -198,4 +183,4 @@ const cdTitles = client.arrays.get('cooldowns');
 })
 
 
-client.login(token);
+client.login(process.env['token']);
