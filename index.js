@@ -12,13 +12,8 @@ Intents.FLAGS.GUILD_MEMBERS,
 require('./useful/roles.js')(client);
 //collection
 client.commands = new Collection();
-client.snipes = new Collection();
-client.esnipes = new Collection();
-client.welcome = new Collection();
-client.wlcmCD = new Collection();
 client.cooldowns = new Collection();
 client.arrays = new Collection();
-
 
 //---------------------------------------
 //-----DATABASE----
@@ -33,12 +28,6 @@ mongoose.connect(process.env['SRV'], {
   console.log(err);
 });
 */
-
-const db = require("quick.db");
-
-//quick.db / sql
-client.db = require("quick.db");
-client.economy = new db.table("economy")
 
 //mongoDB -> collection
 //require("./useful/loadData")(client);
@@ -91,7 +80,6 @@ client.on('messageCreate', async message => {
 //no bots n webhooks
 if(message.author.webhook) return;
 if(message.channel.type ==="DM") return;
-if(message.author.id !== "773534174547279873") return;
 
 let prefix = process.env['prefix'];
 
@@ -99,17 +87,10 @@ if(message.author.bot) return;
 
 if (message.content.startsWith(`<@!${client.user.id}>`)||message.content.startsWith(`<@${client.user.id}>`)) {
 
-if (message.content.trim() == `<@!${client.user.id}>` || message.content.trim() == `<@${client.user.id}>`)
-  return message.reply({embeds:[{
-  title: 'Sis',
-  description: `${message.author}, My prefix is \`​${prefix}\`​. Use \`​${prefix}help\`​ to see commands`,
-  color: 9095703,
-}]});
-
 if (message.content.startsWith(`<@!${client.user.id}>`))
-        message.content = message.content.replace(`<@!${client.user.id}>`, prefix);
+  message.content = message.content.replace(`<@!${client.user.id}>`, prefix);
 if (message.content.startsWith(`<@${client.user.id}>`))
-        message.content = message.content.replace(`<@${client.user.id}>`, prefix);
+  message.content = message.content.replace(`<@${client.user.id}>`, prefix);
     }
 let args;
 

@@ -1,9 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js')
 const db = require("quick.db");
-
-const freezenick = require('../../models/freezenick');
-
 module.exports = {
 	name: 'eval',
 	description: 'Evaluate code from discord', 

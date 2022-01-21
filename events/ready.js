@@ -1,9 +1,15 @@
 
+const db = require("quick.db");
+
 module.exports = {
   name: 'ready',
   once: true,
   async execute(client) {
 
+
+//quick.db / sql
+client.db = require("quick.db");
+client.economy = new db.table("economy")
 
 //console
 console.log(`
