@@ -3,7 +3,6 @@ const { MessageEmbed, Client, Intents, Collection} = require('discord.js');
 const fs = require('fs');
 const config = require('./config.json');
 
-const got = require('got');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES,
 Intents.FLAGS.GUILD_PRESENCES,
 Intents.FLAGS.GUILD_MEMBERS,
@@ -97,7 +96,7 @@ let args;
 
   if(message.content.toLowerCase().startsWith(prefix)){
     args = message.content.slice(prefix.length).split(/ +/);
-    message.params = message.content.slice(prefix.length + args[0].length)
+    message.params = message.content.slice(prefix.length + args[0].length);
   }else{
   return;
 }
