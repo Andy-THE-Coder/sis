@@ -177,12 +177,14 @@ if(!hasItems){
 }else{
   data[name] = data [name] + amount;
 }
-console.log(data);
+
 client.economy.set(`${id}.inv`, data);
 }else{
 client.economy.set(`${id}.inv`,{
   [name]: amount,
 })
 }
+console.log(data);
+
 return client.economy.get(`${id}.inv`)
 }

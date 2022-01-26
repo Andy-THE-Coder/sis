@@ -1,8 +1,7 @@
-const { MessageEmbed } = require('discord.js')
-const db = require('quick.db')
+const { MessageEmbed } = require('discord.js');
 module.exports = {
 	name: 'beg',
-	description: 'beg', 
+	description: 'Beg for some coins lmao there\'s a 35% chance to get a lifesaver (I will react with <:sislife:935448521123967018> if you do)', 
   cooldown: 20,
    async execute(message) {
 
@@ -18,20 +17,16 @@ module.exports = {
     const amount = Math.floor(Math.random() * 100) + 20;
     message.client.economy.add(`${message.author.id}.money`, amount)
 
-const lifeChances = Math.floor((Math.random() * 4) + 1);
-let getsLife;
-if(lifeChances === 1) {
-  await message.client.addItems(message.author.id, 'lifes', 1)
-  getsLife = true;
-}
-
     let moneyEmbed = new MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(`ok sure, have ${amount} coins ${
         message.channel.permissionsFor(message.client.user).has("ADD_REACTIONS") ? "" : (getsLife ? "You also got a life saver": "")
       }`);
       msg.edit({content:`${message.author}`,embeds:[moneyEmbed]});
-      if(getsLife) await msg.react("<:sislife:935448521123967018>");
+if(Math.random() < 0.35) {
+  await message.client.addItems(message.author.id, 'lifes', 1)
+  await msg.react("<:sislife:935448521123967018>");
+}
 
     })
 
