@@ -1,13 +1,13 @@
 const { MessageEmbed } = require('discord.js')
-const db = require('quick.db')
 module.exports = {
 	name: 'balance',
 	description: 'Check ur balance', 
   aliases: ['bal'],
   cooldown: 10,
    async execute(message, args, client) {
+
 let user = message.mentions.members.first() || message.guild.members.cache.find(mem => mem.user.tag === message.params.trim()) || message.member;
-console.log(db)
+
   let bal = await client.economy.fetch(`${user.id}.money`)
   if (!bal) bal = 0;
 

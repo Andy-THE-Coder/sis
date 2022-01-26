@@ -1,19 +1,18 @@
 require('dotenv').config();
 const { MessageEmbed, Client, Intents, Collection} = require('discord.js');
 const fs = require('fs');
-const config = require('./config.json');
+const db = require('quick.db')
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES,
 Intents.FLAGS.GUILD_PRESENCES,
 Intents.FLAGS.GUILD_MEMBERS,
 ] });
 
-require('./useful/roles.js')(client);
 //collection
 client.commands = new Collection();
 client.cooldowns = new Collection();
 client.arrays = new Collection();
-
+client.economy = db.table('economy');
 //---------------------------------------
 //-----DATABASE----
 
@@ -164,3 +163,26 @@ const cdTitles = client.arrays.get('cooldowns');
 
 
 client.login(process.env['token']);
+
+client.addItems = function(id, name, amount = 1){
+  
+let data = client.economy.get(`${id}.inv`);
+
+if(data){
+
+const hasItems = Object.keys(data).includes(name);
+
+if(!hasItems){
+  data[name] = amount;
+}else{
+  data[name] = data [name] + amount;
+}
+console.log(data);
+client.economy.set(`${id}.inv`, data);
+}else{
+client.economy.set(`${id}.inv`,{
+  [name]: amount,
+})
+}
+return client.economy.get(`${id}.inv`)
+}

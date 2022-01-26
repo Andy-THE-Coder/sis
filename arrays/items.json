@@ -1,20 +1,11 @@
-{
-  "herdiary":{
-    "name":"Her Diary",
-    "description":"Wtf? U stole her secret diary?",
-    "id":"diary",
-    "type":"Collectable",
-    "notSharable":true
-  },
-  "pill": {
+[
+  {
   "name": "Pill",
   "id": "pill",
   "image": "https://cdn.discordapp.com/emojis/124.png",
   "description": "A pill that gives you 20% of your current wallet.",
-  "longdescription": "Adds `(20% / 100) x your wallet` to your wallet.",
   "type": "Power-up",
   "notSharble":true,
-  "usable": true,
   "consumable": true,
   "rarity": 3,
   "cost": 50000,
@@ -22,5 +13,14 @@
     "FOOT_HEIGHT": 1.2,
     "FOOT_WIDTH": 0.5
     }
+  },
+  {
+  "name":"uno token",
+  "id":"unotoken",
+  "image":"https://discord.com/assets/6397a81d13d9b1cac66c1afefb072f3d.svg",
+  "description":"A reward given by December's Advent Calendar, you can redeem 1 uno card with 4 uno tokens! `bro use token` to check if you can do this (there will be a confirmation).",
+  "type":"Collectable",
+  "consumable":true,
+  "rarity":2
   }
-}
+]
