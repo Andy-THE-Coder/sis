@@ -1,9 +1,9 @@
 const { MessageEmbed } = require('discord.js')
 module.exports = {
 	name: 'balance',
-	description: 'Check ur balance', 
+	description: 'Check your coin balance, or someone elses', 
   aliases: ['bal'],
-  cooldown: 10,
+  cooldown: 5,
    async execute(message, args, client) {
 
 let user = message.mentions.members.first() || message.guild.members.cache.find(mem => mem.user.tag === message.params.trim()) || message.member;

@@ -56,7 +56,7 @@ function similarityBetween(s1, s2) {
 
 
 function search(query) {
-        query = query.toLowerCase();
+        query = query.toLowerCase().trim();
 
         const target = items;
         const candidates = [];

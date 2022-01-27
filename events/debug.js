@@ -3,6 +3,6 @@ module.exports = {
   once: false,
   async execute(info) {
 
-//console.log(info)
+console.log(info)
   }
 };

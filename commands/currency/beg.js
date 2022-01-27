@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
 	name: 'beg',
 	description: 'Beg for some coins lmao there\'s a 35% chance to get a lifesaver (I will react with <:sislife:935448521123967018> if you do)', 
-  cooldown: 20,
+  cooldown: 30,
    async execute(message) {
 
     const msg = await message.channel.send("Hmm, let me think...").then(async (msg)=> {

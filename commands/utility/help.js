@@ -1,11 +1,9 @@
 const prefix = process.env.PREFIX;
-const fs = require('fs');
-const { MessageEmbed }= require('discord.js');
+const { MessageEmbed } = require('discord.js');
 module.exports = {
 	name: 'help',
 	description: 'List all of my commands or info about a specific command.',
-	aliases: ['commands'],
-  permissions: ['SEND_MESSAGES', 'EMBED_LINKS'],
+	aliases: ['cmds','commands','cmd'],
 	usage: '[command name]',
 	cooldown: 5,
 	execute(message, args) {
@@ -14,15 +12,13 @@ module.exports = {
 let categories = {
   'currency':[], 'utility':[],
   'fun':[], 'config':[],
-  'games':[], 'text':[],
-  'animals':[]
+  'games':[], 'text':[]
 }
 
 let emojis = {
   'currency':"💰", 'utility':"⚒️",
   'fun':"😄", 'config':"⚙️",
-  'games':"🎲", 'text':"🆗",
-  'animals':"🐶"
+  'games':"🎲", 'text':"🆗"
 }
 
 commands.forEach(comd => {
@@ -38,15 +34,12 @@ commands.forEach(comd => {
  .setDescription(
    "See `sis about` for info on the bot. If you have any suggestions, use `sis suggest` to send in your ideas to us directly. Links: [Support](https://discord.com/users/773534174547279873) | [Community](https://discord.gg/Q2dtA7Vtsz)")
  .addFields(
-		{ name: '💰 Currency', value: categories['currency'].join(', '), inline: true },
-		{ name: '💰 Currency', value: categories['currency'].join(', '), inline: true },
-		{ name: '💰 Currency', value: categories['currency'].join(', '), inline: true },
-		{ name: '💰 Currency', value: categories['currency'].join(', '), inline: true },
-		{ name: '💰 Currency', value: categories['currency'].join(', '), inline: true },
-		{ name: '💰 Currency', value: categories['currency'].join(', '), inline: true },
-		{ name: '💰 Currency', value: categories['currency'].join(', '), inline: true },
-		{ name: '💰 Currency', value: categories['currency'].join(', '), inline: true },
-    { name: '\u200B', value: '\u200B', inline: true }
+		{ name: '💰 Currency', value: "`sis help currency", inline: true },
+		{ name: '⚒️ Utility', value: "`sis help utility", inline: true },
+		{ name: '😄 Fun', value: "`sis help fun", inline: true },
+		{ name: '⚙️ Config', value: "`sis help config", inline: true },
+		{ name: '🎲 Games', value: "`sis help games", inline: true },
+		{ name: '🆗 Text', value: "`sis help text", inline: true }
 	)
  .setThumbnail(client.user.displayAvatarURL({default:true}))
 .setFooter("sis about | Newest commands: sis "+ process.env.latestCmd)
