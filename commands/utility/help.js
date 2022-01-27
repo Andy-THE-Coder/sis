@@ -82,7 +82,7 @@ return message.channel.send({embeds:[subHelp]})
 
     if(command.usage) deepHelp.addField('Usage:', `\`${prefix}${command.name} ${command.usage}\``)
   
-    if(command.aliases) deepHelp.addField('Aliases',"`"+command.aliases.push(command.name).join('`, `')+"`")
+    if(command.aliases) deepHelp.addField('Aliases',"`"+command.aliases.join('`, `')+"`, `"+ command.name + "`")
 
     .addField('Cooldown', (command.cooldown ? command.cooldown : 3)+'s');
 

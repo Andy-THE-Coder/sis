@@ -1,9 +1,9 @@
 const fs = require('fs');
+
 module.exports = {
 	name: 'reload',
 	description: 'Reloads a command',
 	args: true,
-  usage: '[command name]',
   aliases:['ri','rl'],
   owner: true,
 	execute(message, args) {
@@ -21,8 +21,10 @@ module.exports = {
 		delete require.cache[require.resolve(`../${folderName}/${command.name}.js`)];
 
 		try {
-			const newCommand = require(`../${folderName}/${command.name}.js`);
+			let newCommand = require(`../${folderName}/${command.name}.js`);
+      newCommand.category = folderName;
 			message.client.commands.set(newCommand.name, newCommand);
+      
 			message.channel.send(`Command \`${newCommand.name}\` was reloaded!`);
 		} catch (error) {
 			console.error(error);
