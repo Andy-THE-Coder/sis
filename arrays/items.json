@@ -1,5 +1,5 @@
-[
-  {
+{
+  "pill":{
   "name": "Pill",
   "id": "pill",
   "image": "https://cdn.discordapp.com/emojis/124.png",
@@ -14,7 +14,7 @@
     "FOOT_WIDTH": 0.5
     }
   },
-  {
+  "unotoken":{
   "name":"uno token",
   "id":"unotoken",
   "image":"https://discord.com/assets/6397a81d13d9b1cac66c1afefb072f3d.svg",
@@ -23,4 +23,4 @@
   "consumable":true,
   "rarity":2
   }
-]
+}

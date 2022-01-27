@@ -13,6 +13,10 @@ client.commands = new Collection();
 client.cooldowns = new Collection();
 client.arrays = new Collection();
 client.economy = db.table('economy');
+
+
+require("./useful/fuzzy")(client);
+
 //---------------------------------------
 //-----DATABASE----
 
@@ -188,3 +192,5 @@ console.log(data);
 
 return client.economy.get(`${id}.inv`)
 }
+
+
